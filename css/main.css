@@ -1,0 +1,149 @@
+.page_nav {    background: url('../images/background.jpg'); position: absolute; top: 0; left: 0; width: 100%;
+    height: 2.5em; color: white}
+
+#main_nav .ui-selecting { background: #FECA40; }
+#main_nav .ui-selected { background: #F39814; color: white; }
+#main_nav { list-style-type: none; margin: auto; padding: 0; width: 50%; }
+#main_nav li {padding: 0.4em; font-size: 1em; height: 1.7em; }
+#main_nav li {float: left;}
+
+.page_main {margin-left: 20%; padding-top: 3em}
+
+.page_footer {font-size: .3em; position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    color: white;
+    text-align: center;}
+
+.page_aside { background: url('../images/background5.jpg'); position: absolute; top: 2.5em; left: 0;
+    height: 5000%; width: 20%; }
+
+.ui-menu {width: 100%;}
+
+.page_header {font-size: larger;}
+
+body{
+    background: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin-top: 2.5em;
+}
+
+h2{
+color: white;
+}
+p{
+color: white;
+    font-size: 20px;
+
+}
+main{
+    color: white;
+}
+#bird3 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.rotate360 {
+
+    transition: transform 0.5s;
+
+    transform: rotate(360deg);
+
+}
+
+
+@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
+h1 {
+    cursor: default;
+    position: absolute;
+    top: 0;
+    left: -15%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    margin: 27%;
+    display: block;
+    text-align: center;
+}
+
+h1 span {
+    position: relative;
+    top: 20px;
+    display: inline-block;
+    -webkit-animation: bounce 0.3s ease infinite alternate;
+    font-size: 80px;
+    color: #fff;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+    0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+    0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+h1 span:nth-child(2) {
+    -webkit-animation-delay: 0.1s;
+}
+
+h1 span:nth-child(3) {
+    -webkit-animation-delay: 0.2s;
+}
+
+h1 span:nth-child(4) {
+    -webkit-animation-delay: 0.3s;
+}
+
+h1 span:nth-child(5) {
+    -webkit-animation-delay: 0.4s;
+}
+
+h1 span:nth-child(6) {
+    -webkit-animation-delay: 0.5s;
+}
+
+h1 span:nth-child(7) {
+    -webkit-animation-delay: 0.6s;
+}
+
+h1 span:nth-child(8) {
+    -webkit-animation-delay: 0.2s;
+}
+
+h1 span:nth-child(9) {
+    -webkit-animation-delay: 0.3s;
+}
+
+h1 span:nth-child(10) {
+    -webkit-animation-delay: 0.4s;
+}
+
+h1 span:nth-child(11) {
+    -webkit-animation-delay: 0.5s;
+}
+
+h1 span:nth-child(12) {
+    -webkit-animation-delay: 0.6s;
+}
+
+h1 span:nth-child(13) {
+    -webkit-animation-delay: 0.7s;
+}
+
+h1 span:nth-child(14) {
+    -webkit-animation-delay: 0.8s;
+}
+
+/* ANIMATION */
+@-webkit-keyframes bounce {
+    100% {
+        top: -20px;
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+        0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
+        0 50px 25px rgba(0, 0, 0, 0.2);
+    }
+}
+
+

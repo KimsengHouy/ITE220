@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7abf2830-38ec-4335-9bca-f3c7545fa8af" name="http" url="http://localhost">
+        <fileTransfer mountedRoot="D:\workspace\PHPStorm\ITE220\MutexXO" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
