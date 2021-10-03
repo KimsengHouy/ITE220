@@ -108,6 +108,12 @@ $(function () {
         location.reload();
     });
 
+    /**
+     * detect hitting on pole
+     * @param $div1
+     * @param $div2
+     * @returns {boolean}
+     */
     function collision($div1, $div2) {
         var x1 = $div1.offset().left;
         var y1 = $div1.offset().top;

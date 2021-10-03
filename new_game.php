@@ -9,7 +9,6 @@ $gamePageHTML = new HTML();
 $css_files = array("css/form.css",
     "css/jquery-ui.min.css",
     "css/main.css",
-    "css/new_game.css",
     "css/style.css");
 $js_files = array("js/jquery-3.6.0.min.js",
     "js/jquery-ui.min.js",
@@ -97,21 +96,6 @@ function main()
 
 
 
-//function main() {
-//
-//    echo "<div id='game_box'>";
-//
-//    echo "<img id='rock' src='./images/rock.png' height='110' width='110'>";
-//
-//    echo "<img id='paper' src='./images/paper.png' height='110' width='110'>";
-//
-//    echo "<img id='scissors' src='./images/scissors.png' height='110' width='110'>";
-//
-//    echo "<div id='player_selection'>NO SELECTION</div>";
-//
-//    echo "<button id='play_btn'>Play</button>";
-//
-//}
 
 
 
