@@ -69,7 +69,6 @@ function process_POST()
         } else {
             echo "PHP validation failed : " . $fail . "<BR>";
         }
-//        echo "<script>alert('Loveyou')";
         echo "<a href = \"index.php\"> Home </a>";
 
 

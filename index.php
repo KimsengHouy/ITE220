@@ -127,17 +127,4 @@ function main()
     echo "<p>Click on alien space to start the game!!!</p>";
 //    echo "<p><a href='testing.php'>Testing</a> </p>";
 
-//    echo "<h2>Disclaimer</h2>";
-//    echo "<p>We strongly urge people not to play this game. Maximum caution must be
-//taken as this game is extremely
-//addictive. We hereby refrain from taking responsibility for damages inflicted to
-//your personal life by
-// playing MutexXO. Losing your job due to late arrivals, couple separation,
-//divorce, burned meals on
-//oven, sudden heart attacks, seizures, etc. are all reported side effects of
-//playing MutexXO.
-//</p> <p>If you still want to play MutexXO you should <a href=''>login</a>
-//otherwise press Ctrl+W and leave this
-//website immediately.</p>";
-//    echo "<p><a href='testing.php'>Testing</a> </p>";
 }

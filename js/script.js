@@ -70,14 +70,18 @@ $(function () {
         }
 
     }, 40);
-
+    /**
+     * Code to specific the key is pressed down keyboard
+     */
     $(document).on('keydown', function (e) {
         var key = e.keyCode;
         if (key === 32 && go_up === false && game_over === false) {
             go_up = setInterval(up, 50);
         }
     });
-
+    /**
+     * Code to specific the key is pressed down keyboard
+     */
     $(document).on('keyup', function (e) {
         var key = e.keyCode;
         if (key === 32) {

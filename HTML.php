@@ -69,47 +69,11 @@ class HTML
         echo "</footer>\n";
         echo "\n</body>\n</html>\n";
     }
-//    public function emitAside() {
-//        echo "<aside class='page_aside'>\n";
-//        echo "<p>This is the sidebar.</p>\n";
-//        echo "<nav class='page_aside_nav'>\n";
-//        echo "<ul id='side_menu'>\n";
-//        echo "<li><div>New Game</div>";
-//        echo "<ul>";
-//        echo "<li><div>Single Player (Offline)</div></li>\n";
-//        echo "<li><div>Multi Player (Online)</div></li>\n";
-//        echo "</ul>\n";
-//        echo "<li><div>Tutorial</div></li>\n";
-//        echo "<li>-</li>";
-//        echo "<li><div>Game Setting</div></li>\n";
-//        echo "<li><div>Account Setting</div></li>\n";
-//        echo "</ul>\n";
-//        echo "</nav>\n";
-//        echo "</aside>\n";
-////    }
-
-//    public function emitAside() {
-//        echo "<aside class='page_aside'>\n";
-//        echo "<p>Menu</p>\n";
-//        echo "<nav class='page_aside_nav'>\n";
-//        echo "<ul id='side_menu'>\n";
-//        echo "<li><div>New Game</div>";
-//        echo " <ul>";
-//        echo " <li><div>Single Player (offline)</div></li>\n";
-//        echo " <li><div>Multi Player (online)</div></li>\n";
-//        echo " </ul>\n";
-//        echo "</li>\n";
-//        echo "<li><div>Tutorial</div>";
-//        echo "</li>\n";
-//        echo "<li><div>Game Setting</div></li>\n";
-//
-//        echo "<li><div>Account Setting</div></li>\n";
-//        echo " </ul>\n";
-//        echo "</nav>\n";
-//        echo "</aside>\n";
-//}
 
 
+    /**
+     * Emits the aside
+     */
     public function emitAside()
     {
         echo "<aside class='page_aside'>
