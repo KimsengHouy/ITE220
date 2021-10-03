@@ -7,14 +7,14 @@ require_once "HTML.php";
 process_POST();
 
 $signUpHTML = new HTML();
-$css_files = array ("css/form.css",
+$css_files = array("css/form.css",
     "css/jquery-ui.min.css",
     "css/main.css");
 $js_files = array("js/jquery-3.6.0.min.js",
     "js/jquery-ui.min.js",
     "js/main.js");
 $signUpHTML->title = "MutexXO Sign-up";
-$signUpHTML->author ="Kimseng Houy";
+$signUpHTML->author = "Kimseng Houy";
 $signUpHTML->emitHeader($css_files, $js_files, "MutexXO - Sign-up");
 $signUpHTML->emitNavigation();
 $signUpHTML->emitMain("MutexXO - Sign-up", 'main');
@@ -22,7 +22,8 @@ $signUpHTML->emitAside();
 $signUpHTML->emitFooter();
 $signUpHTML->loadJS("js/reg_form_handling.js");
 
-function main(){
+function main()
+{
     emitRegistrationForm();
 }
 
@@ -68,13 +69,15 @@ function process_POST()
         } else {
             echo "PHP validation failed : " . $fail . "<BR>";
         }
+//        echo "<script>alert('Loveyou')";
         echo "<a href = \"index.php\"> Home </a>";
 
 
     }
 }
 
-function emitRegistrationForm () {
+function emitRegistrationForm()
+{
     $form = new Form("registrations.php", true);
     $form->startForm("Registration", "validate_registration");
     $form->startRow();
@@ -83,12 +86,12 @@ function emitRegistrationForm () {
     $form->endRow();
     $form->startRow();
     $form->emitText("password:");
-    $form->emitInputText("password");
+    $form->emitInputPassword("password");
     $form->endRow();
 
     $form->startRow();
     $form->emitText("confirm password:");
-    $form->emitInputText("password2");
+    $form->emitInputPassword("password2");
     $form->endRow();
     $form->startRow();
     $form->emitText("email:");
@@ -122,9 +125,8 @@ function emitRegistrationForm () {
             array_push($country_list, $country);
         }
         $form->emitSelect("country", "form_country_select", $country_list);
-    }
-    catch (Exception $e) {
-        die ('Caught exception: '. $e->getMessage() . "\n");
+    } catch (Exception $e) {
+        die ('Caught exception: ' . $e->getMessage() . "\n");
     }
     $form->endRow();
 
@@ -141,9 +143,8 @@ function emitRegistrationForm () {
             array_push($province_list, $province);
         }
         $form->emitSelect("province", "form_province_select", $province_list);
-    }
-    catch (Exception $e) {
-        die ('Caught exception: '. $e->getMessage() . "\n");
+    } catch (Exception $e) {
+        die ('Caught exception: ' . $e->getMessage() . "\n");
     }
 
     $country_id = 30; // Cambodia
@@ -156,9 +157,8 @@ function emitRegistrationForm () {
         $form->emitHiddenSelect("province_30", "form_province_30_select",
             $province_list_30);
 
-    }
-    catch (Exception $e) {
-        die ('Caught exception: '. $e->getMessage() . "\n");
+    } catch (Exception $e) {
+        die ('Caught exception: ' . $e->getMessage() . "\n");
     }
 
 
@@ -167,19 +167,18 @@ function emitRegistrationForm () {
     $form->startRow();
     $form->emitText("city:");
     $city_list = [];
-    $province_name= "Bangkok";
+    $province_name = "Bangkok";
     try {
         $data = $mysql->where("city", "name, postal_code", "province_name LIKE \"" .
-            $province_name. "\"");
+            $province_name . "\"");
         foreach ($data as $row) {
             $city['id'] = $row['name'];
             $city['name'] = $row['name'];
             array_push($city_list, $city);
         }
         $form->emitSelect("city", "form_city_select", $city_list);
-    }
-    catch (Exception $e) {
-        die ('Caught exception: '. $e->getMessage() . "\n");
+    } catch (Exception $e) {
+        die ('Caught exception: ' . $e->getMessage() . "\n");
     }
 
     $form->endRow();
@@ -190,11 +189,13 @@ function emitRegistrationForm () {
     $form->endForm();
 }
 
-function get_post($conn, $var) {
+function get_post($conn, $var)
+{
     return $conn->real_escape_string($_POST[$var]);
 }
 
-function validate_username ($field) {
+function validate_username($field)
+{
     print_r($field);
     if ($field === "")
         return "No Username was entered.\n";
@@ -204,31 +205,39 @@ function validate_username ($field) {
         return "Only a-z, A-Z, 0-9, - and _ allowed in usernames.\n";
     return "";
 }
-function validate_password ($field) {
+
+function validate_password($field)
+{
     return ($field === "") ? "No password was entered.\n" : "";
 }
-function validate_repeat_password ($field, $password) {
+
+function validate_repeat_password($field, $password)
+{
     if ($field === "")
         return "No password2 was entered.\n";
-    else if ($field !== $password )
+    else if ($field !== $password)
         return "passwords do not match\n";
     else
         return "";
 }
 
-function validate_email($field) {
+function validate_email($field)
+{
     return ($field === "") ? "No email was entered.\n" : "";
 }
 
-function validate_name($field) {
+function validate_name($field)
+{
     return ($field === "") ? "No name was entered.\n" : "";
 }
 
-function validate_surname($field) {
+function validate_surname($field)
+{
     return ($field === "") ? "No surname was entered.\n" : "";
 }
 
 
-function validate_phone($field) {
+function validate_phone($field)
+{
     return ($field === "") ? "No phone was entered.\n" : "";
 }

@@ -57,11 +57,24 @@ $(function () {
         }
     );
 
+    $('#side_menu li:nth-child(1)').on('click', function () {
+// Keeps the browser history
+        window.location.href = "http://localhost/MutexXO/new_game.php";
+        console.log("New game is clicked")
+    });
+
+    $('#side_menu li:nth-child(2)').on('click', function () {
+// Keeps the browser history
+        window.location.href = "http://localhost/MutexXO/tutorial.php";
+        console.log("Tutorial is clicked")
+    });
+
 
     $("#side_menu").menu({
             select: function (event, ui) {
-                window.alert(ui)
-                window.location.href = "http://localhost/MutexXO/new_game.php";
+                // window.alert(JSON.stringify(ui))
+                console.log(ui)
+                // window.location.href = "http://localhost/MutexXO/new_game.php";
                 $('.selected', this).removeClass('selected');
                 ui.item.addClass('selected');
                 menuarray = ui.item.text().split(" ");
@@ -70,16 +83,16 @@ $(function () {
         }
     );
 
-    $("#side_menu1").menu({
-            select: function (event, ui) {
-                window.location.href = "http://localhost/MutexXO/contact_us.php";
-                $('.selected', this).removeClass('selected');
-                ui.item.addClass('selected');
-                menuarray = ui.item.text().split(" ");
-                console.log("You selected: " + menuarray[0] + " | Full = " + ui.item.text())
-            }
-        }
-    );
+    // $("#side_menu1").menu({
+    //         select: function (event, ui) {
+    //             window.location.href = "http://localhost/MutexXO/contact_us.php";
+    //             $('.selected', this).removeClass('selected');
+    //             ui.item.addClass('selected');
+    //             menuarray = ui.item.text().split(" ");
+    //             console.log("You selected: " + menuarray[0] + " | Full = " + ui.item.text())
+    //         }
+    //     }
+    // );
 
 });
 

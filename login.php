@@ -7,14 +7,14 @@ require_once "XO_setting.php";
 require_once "session.php";
 
 $homePageHTML = new HTML();
-$css_files = array ("css/form.css",
+$css_files = array("css/form.css",
     "css/jquery-ui.min.css",
     "css/main.css");
 $js_files = array("js/jquery-3.6.0.min.js",
     "js/jquery-ui.min.js",
     "js/main.js");
 $homePageHTML->title = "MutexXO";
-$homePageHTML->author ="Kimseng Houy";
+$homePageHTML->author = "Kimseng Houy";
 $homePageHTML->emitHeader($css_files, $js_files, "MutexXO HomePage");
 $homePageHTML->emitNavigation();
 $homePageHTML->emitMain("MutexXO HomePage", 'main');
@@ -22,27 +22,30 @@ $homePageHTML->emitAside();
 //$homePageHTML->emitFooter();
 
 
-
 /////////////////////////////////////////////
 
-function emitUserAuthForm() {
+function emitUserAuthForm()
+{
     $form = new Form("AuthenticationProcessor.php");
     $form->startForm();
     $form->emitText("Username:");
     $form->emitInputText("username");
     $form->emitText("Password:");
-    $form->emitInputText("password");
+    $form->emitInputPassword("password");
     $form->emitSubmitBtn("Login");
     $form->endForm();
 }
-function emitLogoutForm () {
+
+function emitLogoutForm()
+{
     $form = new Form("logout.php");
     $form->startForm();
     $form->emitSubmitBtn("Logout");
     $form->endForm();
 }
 
-function emitSignUpForm () {
+function emitSignUpForm()
+{
     $form = new Form("sign_up.php");
     $form->startForm();
     $form->emitText("New User?");
@@ -101,3 +104,4 @@ function main()
         emitLogoutForm();
     }
 }
+

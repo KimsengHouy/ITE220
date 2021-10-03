@@ -7,20 +7,19 @@ require_once "XO_setting.php";
 require_once "session.php";
 
 $homePageHTML = new HTML();
-$css_files = array ("css/form.css",
+$css_files = array("css/form.css",
     "css/jquery-ui.min.css",
     "css/main.css");
 $js_files = array("js/jquery-3.6.0.min.js",
     "js/jquery-ui.min.js",
     "js/main.js");
 $homePageHTML->title = "MutexXO";
-$homePageHTML->author ="Kimseng Houy";
+$homePageHTML->author = "Kimseng Houy";
 $homePageHTML->emitHeader($css_files, $js_files, "MutexXO HomePage");
 $homePageHTML->emitNavigation();
 $homePageHTML->emitMain("MutexXO HomePage", 'main');
 $homePageHTML->emitAside();
-$homePageHTML->emitFooter();
-
+//$homePageHTML->emitFooter();
 
 
 /////////////////////////////////////////////
@@ -99,7 +98,8 @@ $homePageHTML->emitFooter();
 //    if ($logged_in) {
 //        emitLogoutForm();
 //    }
-function main(){
+function main()
+{
 
 
     echo "<h1>

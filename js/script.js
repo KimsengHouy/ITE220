@@ -7,6 +7,7 @@ $(function () {
     var pole_1 = $('#pole_1');
     var pole_2 = $('#pole_2');
     var score = $('#score');
+    var username = $('#name');
     var speed_span = $('#speed');
     var restart_btn = $('#restart_btn');
 
@@ -95,11 +96,13 @@ $(function () {
     }
 
     function stop_the_game() {
+        alert(`${username.text().replace(' ', '')}'s score is: ${Number.parseInt(score.text())}\nGame Over`);
         clearInterval(the_game);
         game_over = true;
         restart_btn.slideDown();
 
     }
+
 
     restart_btn.click(function () {
         location.reload();
@@ -122,7 +125,6 @@ $(function () {
         if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
         return true;
     }
-
 
 
 });
