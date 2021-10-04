@@ -123,8 +123,13 @@ function main()
   
 </h1>";
     echo "<a href='new_game.php'> <img id='bird3' src='./images/bird3.png' height='500' width='250'> </a> ";
-    echo "<h2>Let's Have Fun</h2>";
-    echo "<p>Click on alien space to start the game!!!</p>";
+    echo "<h2>Let's Have Fun!!!</h2>";
+    echo "<p id = 'p1'>Click on alien space to start the game!!!</p>";
     echo "<p><a href='testing.php'>Testing</a> </p>";
+    echo "<audio id='audio' controls loop>
+  <source src='space.mp3' type='audio/mpeg'>
+Your browser does not support the audio element.
+</audio>";
+
 
 }

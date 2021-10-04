@@ -1,9 +1,8 @@
 .xo-form {
     background: linear-gradient(45deg, #FC466B, #3F5EFB);
-    margin: 200px;
-    left: 17%;
-    padding: 3em;
-    height: 320px;
+    margin: 20px;
+    padding: 2em;
+    height: 50px;
     border-radius: 20px;
     border-left: 1px solid white;
     border-top: 1px solid white;
@@ -25,7 +24,6 @@
     margin-bottom: 60px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     width: 200px;
-    position: relative;
 
 }
 
@@ -39,4 +37,3 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 
 }
-

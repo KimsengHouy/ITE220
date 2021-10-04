@@ -36,7 +36,7 @@ if (isset($_POST['username']) &&
 
 
     if ($fail == "") {
-        echo "PHP validation successful." . "<BR>";
+        echo " is register successfully" . "<BR>";
         $hashed_password = password_hash($password, PASSWORD_ARGON2ID);
         $user = new user($username, $phone, $email, $hashed_password, $name, $surname,
             $country_id, $city_name, $city_postal_code, $role, $is_deleted);

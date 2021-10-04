@@ -78,7 +78,7 @@ function process_POST()
 function emitRegistrationForm()
 {
     $form = new Form("registrations.php", true);
-    $form->startForm("Registration", "validate_registration");
+    $form->startForm("Sign Up", "validate_registration");
     $form->startRow();
     $form->emitText("username:");
     $form->emitInputText("username");

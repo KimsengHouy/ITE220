@@ -7,7 +7,7 @@ require_once "XO_setting.php";
 require_once "session.php";
 
 $homePageHTML = new HTML();
-$css_files = array("css/form.css",
+$css_files = array("css/login.css",
     "css/jquery-ui.min.css",
     "css/main.css");
 $js_files = array("js/jquery-3.6.0.min.js",
@@ -19,6 +19,7 @@ $homePageHTML->emitHeader($css_files, $js_files, "MutexXO HomePage");
 $homePageHTML->emitNavigation();
 $homePageHTML->emitMain("MutexXO HomePage", 'main');
 $homePageHTML->emitAside();
+$homePageHTML->loadJS("js/reg_form_handling.js");
 //$homePageHTML->emitFooter();
 
 
@@ -26,8 +27,8 @@ $homePageHTML->emitAside();
 
 function emitUserAuthForm()
 {
-    $form = new Form("AuthenticationProcessor.php");
-    $form->startForm();
+    $form = new Form("AuthenticationProcessor.php", true);
+    $form->startForm("Login", "validate_registration");;
     $form->emitText("Username:");
     $form->emitInputText("username");
     $form->emitText("Password:");
@@ -44,9 +45,10 @@ function emitLogoutForm()
     $form->endForm();
 }
 
+
 function emitSignUpForm()
 {
-    $form = new Form("sign_up.php");
+    $form = new Form("sign_up.php", true);
     $form->startForm();
     $form->emitText("New User?");
     $form->emitSubmitBtn("Sign Up");
@@ -94,7 +96,7 @@ function main()
             break;
 
     }
-    echo "Hello " . $username . "<BR>";
+    echo "<p><b>Hello </b><span id ='name'> $username </span> </p> ";
 
     if (!$logged_in) {
         emitUserAuthForm();
@@ -103,5 +105,22 @@ function main()
     if ($logged_in) {
         emitLogoutForm();
     }
+}
+
+function validate_username($field)
+{
+    print_r($field);
+    if ($field === "")
+        return "No Username was entered.\n";
+    else if (strlen($field) < 5)
+        return "Usernames must be at least 5 characters.\n";
+    else if (preg_match("'/ˆ[a-zA-Z0-9_-]/'", $field))
+        return "Only a-z, A-Z, 0-9, - and _ allowed in usernames.\n";
+    return "";
+}
+
+function validate_password($field)
+{
+    return ($field === "") ? "No password was entered.\n" : "";
 }
 

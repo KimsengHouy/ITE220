@@ -9,11 +9,11 @@
 }
 
 #main_nav .ui-selecting {
-    background: #FECA40;
+    background: linear-gradient(45deg, #FC466B, #3F5EFB);
 }
 
 #main_nav .ui-selected {
-    background: #F39814;
+    background: linear-gradient(45deg, #FC466B, #3F5EFB);
     color: white;
 }
 
@@ -75,12 +75,25 @@ body {
 }
 
 h2 {
+    margin: 20px;
     color: white;
+    border-style: outset;
+    width: 250px;
+    background: linear-gradient(45deg, #FC466B, #3F5EFB);
 }
 
 p {
     color: white;
     font-size: 20px;
+}
+
+#p1 {
+    margin: 20px;
+    color: white;
+    font-size: 20px;
+    border-style: outset;
+    width: 300px;
+    background: linear-gradient(45deg, #FC466B, #3F5EFB);
 
 }
 
@@ -104,22 +117,31 @@ main {
 }
 
 #t1 {
+    margin: 50px;
     color: white;
     font-size: 50px;
     text-align: center;
+    border-style: outset;
+    background: linear-gradient(45deg, #FC466B, #3F5EFB);
 }
 
 
 #t2 {
+    margin: 50px;
     color: white;
     font-size: 50px;
     text-align: center;
+    border-style: solid;
+    background: linear-gradient(45deg, #FC466B, #3F5EFB);
 }
 
 #t3 {
+    margin: 20px;
     color: red;
     font-size: 70px;
     text-align: center;
+    border-style: inset;
+    background-color: white;
 }
 
 
@@ -127,12 +149,45 @@ main {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #FC466B, #3F5EFB);
 }
 
 #space_bar {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #FC466B, #3F5EFB);
+}
+
+#map-responsive {
+    margin: 20px;
+
+    overflow: hidden;
+
+    padding-bottom: 56.25%;
+
+    position: relative;
+
+    height: 0;
+
+}
+
+#map-responsive iframe {
+
+    left: 0;
+    top: 0;
+    position: absolute;
+
+}
+
+#audio {
+    position: relative;
+    top: -700px;
+    right: -1100px;
 }
 
 
@@ -150,6 +205,7 @@ h1 {
     display: block;
     text-align: center;
 }
+
 
 h1 span {
     position: relative;

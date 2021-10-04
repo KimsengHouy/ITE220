@@ -47,13 +47,13 @@ $(function () {
         console.log("Contact Us is clicked")
     });
     $('#main_nav li').hover(function () {
-            $(this).css("background", "#eab02f");
+            $(this).css("background", "#00FFFF");
         },
         function () {
             if ($(this).hasClass("nav_selected"))
-                $(this).css("background", "burlywood"); // body background color
+                $(this).css("background", "#7B68EE"); // body background color
             else
-                $(this).css("background", "#79793c"); // page header background color
+                $(this).css("background", "#00CED1"); // page header background color
         }
     );
 
