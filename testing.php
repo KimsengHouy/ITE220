@@ -5,62 +5,199 @@ require_once "XO_setting.php";
 require_once "session.php";
 
 $testingPageHTML = new HTML();
-$css_files = array ("css/testing.css","css/jquery-ui.min.css",);
+$css_files = array("css/testing.css", "css/jquery-ui.min.css",);
 $js_files = array("js/jquery-3.6.0.min.js",
     "js/jquery-ui.min.js",
     "js/main.js");
 $testingPageHTML->title = "MutexXO";
-$testingPageHTML->author ="Kimseng Houy";
+$testingPageHTML->author = "Kimseng Houy";
 $testingPageHTML->emitHeader($css_files, $js_files, "Testing Page");
 $testingPageHTML->emitMain("Testing Page", 'main');
 
 
-function main(){
-
+function main()
+{
     echo <<<MYSCRIPT
-<canvas id='mycanvas' width='320' height='320'></canvas>
 
-
+<canvas id='myCanvas' width='800' height='600'></canvas>
 <script>
+function O(i) {
+    return typeof i == 'object' ? i : document.getElementById(i)
+}
 
-$(function() {
-canvas = O('mycanvas')
+function S(i) {
+    return O(i).style
+}
+
+$(function () {
+var rects = [];
+
+rects.push({
+
+	x: 10,
+
+	y: 10,
+
+	width: 30,
+
+	height: 15,
+
+	fillcolor: "red",
+
+	isFilled: false
+
+});
+
+rects.push({
+
+	x: 10,
+
+	y: 50,
+
+	width: 50,
+
+	height: 30,
+
+	fillcolor: "blue",
+
+	isFilled: false
+
+});
+
+
+
+var offsetX
+
+var offsetY
+
+var vW
+
+var cH
+
+
+
+$( function() {
+
+	canvas = O('mycanvas')
 
 	context = canvas.getContext('2d')
 
+	context.lineWidth = 1
+
 	S(canvas).background = 'lightblue'
 
-	context.strokeStyle = 'orange'
+	
 
-	context.fillStyle = 'yellow'
+	canvas.addEventListener('click', function(event) {
+
+		handleMouseDown(event);
+
+	}, false);
 
 	
 
-	context.beginPath()
+	offsetX = canvas.offsetLeft;
 
-	context.fillStyle = 'blue'
+	offsetY = canvas.offsetTop;
 
-	context.rect( 150, 100, 500, 350) // White background
+	cW =   canvas.clientWidth
 
-	context.closePath()
+	cH =   canvas.clientHeight
 
-	// context.stroke()
+	console.log("cancas offset ( x , y ) = (", offsetX, ",", offsetY, ")");
 
-	context.clip()
+	draw(context);
+
+}
+
+)
+
+
+
+function draw(context) {
+
+	context.clearRect(0, 0, cW, cH);
+
+	for (let i = 0; i < rects.length; i++) {
+
+		let rect = rects[i];
+
+		if (rect.isFilled) {
+
+			context.fillStyle = rect.fillcolor;
+
+			context.fillRect(rect.x, rect.y, rect.width, rect.height);
+
+		}
+
+		context.strokeStyle = "black";
+
+		context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+
+	}
+
+}
+
+
+
+function handleMouseDown(event) {
+
+	event.preventDefault();
+
+	let xVal = event.pageX - offsetX
+
+	let yVal = event.pageY - offsetY           
+
+	console.log(xVal, yVal);
 
 	
 
-	context.beginPath()
+	for (let i = 0; i < rects.length; i++) {
 
-	context.moveTo(400, 50)
+		
 
-	context.lineTo(700, 400)
+		if (hit(rects[i], xVal, yVal)) {
 
-	context.lineTo(100, 400)
+			var rect = rects[i]
 
-	context.closePath()
+			rect.isFilled = ! rect.isFilled;
 
-	context.fill()
+		}
+
+	}
+
+	canvas = O('mycanvas')
+
+	context = canvas.getContext('2d')
+
+	draw(context);
+
+}
+
+
+
+function hit(rect, x, y) {
+
+	return (
+
+	x >= rect.x &&
+
+	x <= rect.x + rect.width &&
+
+	y >= rect.y &&
+
+	y <= rect.y + rect.height
+
+	);
+
+}
+)
+
+
+
+
+
+
 
 </script>
 

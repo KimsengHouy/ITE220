@@ -22,9 +22,8 @@ $tutorialHTML->emitAside();
 
 function main()
 {
-    echo "<p id='t1'>DO NOT HIT THE POLE!</p>";
-    echo "<p id='t2'>Use space bar on your keyboard to fly !!!</p>";
-    echo "<img id='ctrl' src='./images/ctrl-key.png' height='50' width='50'> <img id='space_bar' src='./images/space_bar.png' height='50' width='100'>";
+    echo "<p id='t1'>Use ctrl + space bar on your keyboard to fly !!!</p>";
+    echo "<img id='ctrl' src='./images/ctrl-key.png' height='100' width='70'> <img id='space_bar' src='./images/space_bar.png' height='80' width='100'>";
 
 
 }

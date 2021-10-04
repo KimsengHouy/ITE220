@@ -69,6 +69,12 @@ $(function () {
         console.log("Tutorial is clicked")
     });
 
+    $('#side_menu li:nth-child(3)').on('click', function () {
+// Keeps the browser history
+        window.location.href = "http://localhost/MutexXO/instruction.php";
+        console.log("Instruction is clicked")
+    });
+
 
     $("#side_menu").menu({
             select: function (event, ui) {

@@ -28,7 +28,8 @@ $(function () {
 
     var the_game = setInterval(function () {
 
-        if (collision(bird, pole_1) || collision(bird, pole_2) || parseInt(bird.css('top')) <= 0 || parseInt(bird.css('top')) > container_height - bird_height) {
+        if (collision(bird, pole_1) || collision(bird, pole_2) || parseInt(bird.css('top')) <= 0 ||
+            parseInt(bird.css('top')) > container_height - bird_height) {
 
             stop_the_game();
 

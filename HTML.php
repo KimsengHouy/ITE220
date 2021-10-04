@@ -88,7 +88,7 @@ class HTML
         </li>
         <li><div>Tutorial</div>
         </li>
-        <li><div>Game Setting</div></li>
+        <li><div>Instruction</div></li>
 
         <li><div>Account Setting</div></li>
         </ul>

@@ -125,6 +125,6 @@ function main()
     echo "<a href='new_game.php'> <img id='bird3' src='./images/bird3.png' height='500' width='250'> </a> ";
     echo "<h2>Let's Have Fun</h2>";
     echo "<p>Click on alien space to start the game!!!</p>";
-//    echo "<p><a href='testing.php'>Testing</a> </p>";
+    echo "<p><a href='testing.php'>Testing</a> </p>";
 
 }

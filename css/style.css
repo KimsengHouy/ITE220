@@ -45,7 +45,8 @@ body {
     text-align: center;
     font-size: 40px;
 }
-.name{
+
+.name {
     text-align: center;
     font-size: 40px;
 }
@@ -62,6 +63,7 @@ body {
     cursor: pointer;
     display: none;
 }
-body{
+
+body {
     background: url('../images/background.jpg');
 }

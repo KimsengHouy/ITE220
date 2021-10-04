@@ -81,8 +81,7 @@ function main()
     echo "</div>";
 
     echo "<button id='restart_btn'>Restart</button>";
-
-
+    
 }
 
 
