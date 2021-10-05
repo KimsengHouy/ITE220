@@ -30,13 +30,15 @@ $db = 'mutexxo';
 $un = 'mutexxo_admin1';
 $pw = 'VMGc82LA3I5331ovdQrq';
 
-abstract class Role {
+abstract class Role
+{
     const Normal = 0;
     const Administration = 1;
 
 }
 
-abstract class DeleteStatus {
+abstract class DeleteStatus
+{
     const Normal = 0;
     const Administration = 1;
 }

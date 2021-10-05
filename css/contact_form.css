@@ -47,3 +47,23 @@
     font-size: 30px;
 }
 
+#map-responsive {
+    margin: 20px;
+
+    overflow: hidden;
+
+    padding-bottom: 56.25%;
+
+    position: relative;
+
+    height: 0;
+
+}
+
+#map-responsive iframe {
+
+    left: 0;
+    top: 0;
+    position: absolute;
+
+}
