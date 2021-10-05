@@ -28,7 +28,7 @@ $homePageHTML->loadJS("js/reg_form_handling.js");
 function emitUserAuthForm()
 {
     $form = new Form("AuthenticationProcessor.php", true);
-    $form->startForm("Login", "validate_registration");;
+    $form->startForm("Login", "validate_registration");
     $form->emitText("Username:");
     $form->emitInputText("username");
     $form->emitText("Password:");
@@ -122,5 +122,36 @@ function validate_username($field)
 function validate_password($field)
 {
     return ($field === "") ? "No password was entered.\n" : "";
+}
+
+function validate_repeat_password($field, $password)
+{
+    if ($field === "")
+        return "No password2 was entered.\n";
+    else if ($field !== $password)
+        return "passwords do not match\n";
+    else
+        return "";
+}
+
+function validate_email($field)
+{
+    return ($field === "") ? "No email was entered.\n" : "";
+}
+
+function validate_name($field)
+{
+    return ($field === "") ? "No name was entered.\n" : "";
+}
+
+function validate_surname($field)
+{
+    return ($field === "") ? "No surname was entered.\n" : "";
+}
+
+
+function validate_phone($field)
+{
+    return ($field === "") ? "No phone was entered.\n" : "";
 }
 

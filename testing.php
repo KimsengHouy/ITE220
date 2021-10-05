@@ -19,181 +19,47 @@ function main()
 {
     echo <<<MYSCRIPT
 
-<canvas id='myCanvas' width='800' height='600'></canvas>
+<canvas id='myCanvas' width='535' height='360' style='border:1px solid #000000;'>
+Your browser does not support the HTML canvas tag.
+</canvas>
 <script>
-function O(i) {
-    return typeof i == 'object' ? i : document.getElementById(i)
-}
 
-function S(i) {
-    return O(i).style
-}
+// helper functions:
+function O(i) { return typeof i == 'object' ? i : document.getElementById(i) }
+function S(i) { return O(i).style }
+function C(i) { return document.getElementsByClassName(i) }
 
-$(function () {
-var rects = [];
-
-rects.push({
-
-	x: 10,
-
-	y: 10,
-
-	width: 30,
-
-	height: 15,
-
-	fillcolor: "red",
-
-	isFilled: false
-
-});
-
-rects.push({
-
-	x: 10,
-
-	y: 50,
-
-	width: 50,
-
-	height: 30,
-
-	fillcolor: "blue",
-
-	isFilled: false
-
-});
-
-
-
-var offsetX
-
-var offsetY
-
-var vW
-
-var cH
 
 
 
 $( function() {
-
-	canvas = O('mycanvas')
-
-	context = canvas.getContext('2d')
-
-	context.lineWidth = 1
-
-	S(canvas).background = 'lightblue'
-
-	
-
-	canvas.addEventListener('click', function(event) {
-
-		handleMouseDown(event);
-
-	}, false);
-
-	
-
-	offsetX = canvas.offsetLeft;
-
-	offsetY = canvas.offsetTop;
-
-	cW =   canvas.clientWidth
-
-	cH =   canvas.clientHeight
-
-	console.log("cancas offset ( x , y ) = (", offsetX, ",", offsetY, ")");
-
-	draw(context);
-
+const canvas = O('myCanvas');
+const context = canvas.getContext('2d')
+S(canvas).background = 'lightblue'
+context.fillStyle = 'red'
+context.font = 'bold 13pt Courier'
+context.strokeStyle = 'blue'
+context.textBaseline = 'top'
+context.textAlign = 'center'
+context.lineWidth = 20
+const caps = ['butt', 'round', 'square']
+const joins = ['round', 'bevel', 'miter']
+for (let j = 0 ; j < 3 ; ++j) {
+ for (let k = 0 ; k < 3 ; ++k) {
+context.lineCap = caps[j]
+context.lineJoin = joins[k]
+context.fillText(' cap:' + caps[j], 88 + j * 180, 45 + k * 120)
+context.fillText('join:' + joins[k], 88 + j * 180, 65 + k * 120)
+context.beginPath()
+context.moveTo( 20 + j * 180, 100 + k * 120)
+context.lineTo( 20 + j * 180, 20 + k * 120)
+context.lineTo(155 + j * 180, 20 + k * 120)
+context.lineTo(155 + j * 180, 100 + k * 120)
+context.stroke()
+context.closePath()
+ }
 }
-
-)
-
-
-
-function draw(context) {
-
-	context.clearRect(0, 0, cW, cH);
-
-	for (let i = 0; i < rects.length; i++) {
-
-		let rect = rects[i];
-
-		if (rect.isFilled) {
-
-			context.fillStyle = rect.fillcolor;
-
-			context.fillRect(rect.x, rect.y, rect.width, rect.height);
-
-		}
-
-		context.strokeStyle = "black";
-
-		context.strokeRect(rect.x, rect.y, rect.width, rect.height);
-
-	}
-
-}
-
-
-
-function handleMouseDown(event) {
-
-	event.preventDefault();
-
-	let xVal = event.pageX - offsetX
-
-	let yVal = event.pageY - offsetY           
-
-	console.log(xVal, yVal);
-
-	
-
-	for (let i = 0; i < rects.length; i++) {
-
-		
-
-		if (hit(rects[i], xVal, yVal)) {
-
-			var rect = rects[i]
-
-			rect.isFilled = ! rect.isFilled;
-
-		}
-
-	}
-
-	canvas = O('mycanvas')
-
-	context = canvas.getContext('2d')
-
-	draw(context);
-
-}
-
-
-
-function hit(rect, x, y) {
-
-	return (
-
-	x >= rect.x &&
-
-	x <= rect.x + rect.width &&
-
-	y >= rect.y &&
-
-	y <= rect.y + rect.height
-
-	);
-
-}
-)
-
-
+})
 
 
 
