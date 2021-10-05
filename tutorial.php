@@ -25,5 +25,4 @@ function main()
     echo "<p id='t1'>Use ctrl + space bar on your keyboard to fly !!!</p>";
     echo "<img id='ctrl' src='./images/ctrl-key.png' height='100' width='70'> <img id='space_bar' src='./images/space_bar.png' height='80' width='100'>";
 
-
 }

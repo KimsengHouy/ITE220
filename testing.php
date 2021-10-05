@@ -19,7 +19,7 @@ function main()
 {
     echo <<<MYSCRIPT
 
-<canvas id='myCanvas' width='535' height='360' style='border:1px solid #000000;'>
+<canvas id='myCanvas' width='150' height='150'>
 Your browser does not support the HTML canvas tag.
 </canvas>
 <script>
@@ -33,33 +33,25 @@ function C(i) { return document.getElementsByClassName(i) }
 
 
 $( function() {
-const canvas = O('myCanvas');
-const context = canvas.getContext('2d')
-S(canvas).background = 'lightblue'
-context.fillStyle = 'red'
-context.font = 'bold 13pt Courier'
-context.strokeStyle = 'blue'
-context.textBaseline = 'top'
-context.textAlign = 'center'
-context.lineWidth = 20
-const caps = ['butt', 'round', 'square']
-const joins = ['round', 'bevel', 'miter']
-for (let j = 0 ; j < 3 ; ++j) {
- for (let k = 0 ; k < 3 ; ++k) {
-context.lineCap = caps[j]
-context.lineJoin = joins[k]
-context.fillText(' cap:' + caps[j], 88 + j * 180, 45 + k * 120)
-context.fillText('join:' + joins[k], 88 + j * 180, 65 + k * 120)
+canvas = O('myCanvas')
+context = canvas.getContext('2d')
+// S(canvas).background = 'lightblue'
+context.strokeStyle = 'black'
+context.fillStyle = 'purple'
+
 context.beginPath()
-context.moveTo( 20 + j * 180, 100 + k * 120)
-context.lineTo( 20 + j * 180, 20 + k * 120)
-context.lineTo(155 + j * 180, 20 + k * 120)
-context.lineTo(155 + j * 180, 100 + k * 120)
+ context.moveTo(75, 40)
+context.bezierCurveTo(75, 37, 70, 25, 50, 25)
+context.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5)
+context.bezierCurveTo(20, 80, 40, 102, 75, 120)
+context.bezierCurveTo(110, 102, 130, 80, 130, 62.5)
+context.bezierCurveTo(130, 62.5, 130, 25, 100, 25)
+context.bezierCurveTo(85, 25, 75, 37, 75, 40)
 context.stroke()
+context.fill()
 context.closePath()
  }
-}
-})
+)
 
 
 

@@ -84,6 +84,9 @@ class Form
 
     }
 
+    /**
+     * @param $inputPassword dot sign
+     */
     public function emitInputPassword($inputPassword)
     {
         if ($this->addTable)
@@ -107,6 +110,11 @@ class Form
 
     }
 
+    /**
+     * @param $selectName
+     * @param $selectID
+     * @param $items
+     */
     public function emitSelect($selectName, $selectID, $items)
     {
         if ($this->addTable) {
@@ -125,7 +133,11 @@ class Form
         }
     }
 
-
+    /**
+     * @param $selectName
+     * @param $id
+     * @param $items
+     */
     public function emitHiddenSelect($selectName, $id, $items)
     {
         echo "<select style=\"display:none\" name=\"" . $selectName . "\" id='" . $id . "'>";
@@ -135,7 +147,9 @@ class Form
         echo "</select>";
     }
 
-
+    /**
+     * row in form
+     */
     public function startRow()
     {
         echo "\n<tr class='xo-form-row'>";

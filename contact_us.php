@@ -29,8 +29,6 @@ function main()
     echo "<div id='map-responsive'>
 <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.7243324235683!2d100.65921491541117!3d13.73513250137872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d61a987e00607%3A0xda2e11759cf75777!2sStamford%20International%20University!5e0!3m2!1sen!2sth!4v1633361656365!5m2!1sen!2sth' width='600' height='450' style='border:0;' allowfullscreen= 'loading=' 'lazy'></iframe>
 </div>";
-
-
 }
 
 function emitContactUsForm()
