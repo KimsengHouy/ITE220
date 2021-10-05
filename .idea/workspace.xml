@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ee98d09-517d-41f3-b58a-41e6d3038a7f" name="Changes" comment="add map&#10;add css to login sign up and contact us&#10;add audio control">
+    <list default="true" id="9ee98d09-517d-41f3-b58a-41e6d3038a7f" name="Changes" comment="code to login&#10;testing page canvas">
+      <change afterPath="$PROJECT_DIR$/shop.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sign_up.php" beforeDir="false" afterPath="$PROJECT_DIR$/sign_up.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing.php" beforeDir="false" afterPath="$PROJECT_DIR$/testing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTML.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +134,7 @@
       <workItem from="1633081978340" duration="13209000" />
       <workItem from="1633260302592" duration="12434000" />
       <workItem from="1633332478397" duration="19477000" />
-      <workItem from="1633396230005" duration="3101000" />
+      <workItem from="1633396230005" duration="6272000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1633099144817</created>
@@ -176,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633365963727</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="code to login&#10;testing page canvas">
+      <created>1633411385111</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1633411385111</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +210,8 @@
     <MESSAGE value="delete some necessary" />
     <MESSAGE value="add instruction page&#10;change some css&#10;add somecode to testing page" />
     <MESSAGE value="add map&#10;add css to login sign up and contact us&#10;add audio control" />
-    <option name="LAST_COMMIT_MESSAGE" value="add map&#10;add css to login sign up and contact us&#10;add audio control" />
+    <MESSAGE value="code to login&#10;testing page canvas" />
+    <option name="LAST_COMMIT_MESSAGE" value="code to login&#10;testing page canvas" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

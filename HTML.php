@@ -90,7 +90,7 @@ class HTML
         </li>
         <li><div>Instruction</div></li>
 
-        <li><div>Account Setting</div></li>
+        <li><div>Shop</div></li>
         </ul>
         </nav>
         </aside>";

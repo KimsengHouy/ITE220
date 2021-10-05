@@ -12,7 +12,8 @@ $css_files = array("css/form.css",
     "css/main.css");
 $js_files = array("js/jquery-3.6.0.min.js",
     "js/jquery-ui.min.js",
-    "js/main.js");
+    "js/main.js",
+);
 $homePageHTML->title = "MutexXO";
 $homePageHTML->author = "Kimseng Houy";
 $homePageHTML->emitHeader($css_files, $js_files, "MutexXO HomePage");
@@ -126,9 +127,8 @@ function main()
     echo "<h2>Let's Have Fun!!!</h2>";
     echo "<p id = 'p1'>Click on alien space to start the game!!!</p>";
     echo "<p><a href='testing.php'>Testing</a> </p>";
-    echo "<audio id='audio' controls loop>
-  <source src='space.mp3' type='audio/mpeg'>
-Your browser does not support the audio element.
+    echo "<audio id ='audio-player' preload='auto' autoplay loop controls>
+  <source src='space.mp3' type='audio/mpeg'>.
 </audio>";
 
 
