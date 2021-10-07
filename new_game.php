@@ -67,7 +67,7 @@ function main()
     echo "<p><b>Player Name: </b><span id ='name'> $username </span> </p> ";
 
     if ($logged_in) {
-        emitLogoutForm();
+
     }
 
     echo "<div id='score_div'>";
@@ -81,7 +81,7 @@ function main()
     echo "</div>";
 
     echo "<button id='restart_btn'>Restart</button>";
-    
+
 }
 
 

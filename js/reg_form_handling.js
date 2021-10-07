@@ -9,10 +9,6 @@ document.getElementById("form_country_select").addEventListener("change", countr
 document.getElementById("form_province_select").addEventListener("change", province_changed)
 
 
-
-
-
-
 function validate_registration(form) {
 
     debugger
@@ -32,13 +28,14 @@ function validate_registration(form) {
     fail += validatePhone(form.phone.value)
 
 
-
     if (fail === "") return true
 
-    else { alert(fail); return false }
+    else {
+        alert(fail);
+        return false
+    }
 
 }
-
 
 
 function validateUsername(field) {
@@ -58,13 +55,11 @@ function validateUsername(field) {
 }
 
 
-
 function validatePassword(field) {
 
     return (field === "") ? "No password was entered.\n" : ""
 
 }
-
 
 
 function validateRepeatPassword(field) {
@@ -88,13 +83,11 @@ function validateRepeatPassword(field) {
 }
 
 
-
 function validateEmail(field) {
 
     return (field === "") ? "No email was entered.\n" : ""
 
 }
-
 
 
 function validateName(field) {
@@ -104,7 +97,6 @@ function validateName(field) {
 }
 
 
-
 function validateSurname(field) {
 
     return (field === "") ? "No surname was entered.\n" : ""
@@ -112,13 +104,11 @@ function validateSurname(field) {
 }
 
 
-
 function validatePhone(field) {
 
     return (field === "") ? "No phone was entered.\n" : ""
 
 }
-
 
 
 function country_changed() {
@@ -134,16 +124,15 @@ function country_changed() {
     console.log("User changed the country to " + country_name + " (id=" + id[1] + ")")
 
 
-
     let params = "country_id=" + id[1]
 
     let url = "api/get_province_list.php"
 
     let request = new ajaxRequest()
 
-    request.open("POST", url, true /* async */ )
+    request.open("POST", url, true /* async */)
 
-    request.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
 
     request.responseType = "text/xml";
 
@@ -153,26 +142,25 @@ function country_changed() {
 
 }
 
-
+/**
+ * function for province change
+ */
 function province_changed() {
     let province_name = document.getElementById("form_province_select").value
     let options = document.getElementById("form_province_select").options;
     let province_id = options[options.selectedIndex].id;
-    //let id =province_id.match(/^province_(\w+)/ ) ;
     console.log(province_id)
-    console.log("User changed the province to " + province_name )
-    //+"(id=" + id + " )")
+    console.log("User changed the province to " + province_name)
 
-    let params = "province_name="+ province_name
+    let params = "province_name=" + province_name
     let url = "api/get_cities_list.php"
     let request = new ajaxRequest()
-    request.open("POST", url, true /* async */ )
-    request.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+    request.open("POST", url, true /* async */)
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     request.responseType = "text/xml";
     request.onreadystatechange = process_XML_response1
     request.send(params)
 }
-
 
 
 /**
@@ -209,26 +197,18 @@ function process_XML_response() {
                         select.appendChild(el)
                     }
                 }
-            }
-        else alert("Ajax error: No data received")
-            }
-        else alert("Ajax error: " + this.statusText)
-        }
+            } else alert("Ajax error: No data received")
+        } else alert("Ajax error: " + this.statusText)
     }
+}
 
 
 function process_XML_response1() {
-
     if (this.readyState === 4) {
-
         if (this.status === 200) {
-
             console.log("readyState == 4, status == 200  ")
-
             console.log("response xml=  " + this.responseText)
-
             if (this.responseText != null) {
-
                 let cities = this.responseXML.getElementsByTagName('city');
                 if (cities.length !== 0) {
                     let select = document.getElementById("form_city_select");
@@ -245,47 +225,41 @@ function process_XML_response1() {
                         select.appendChild(el)
                     }
                 }
-            }
-            else alert("Ajax error: No data received")
-        }
-        else alert("Ajax error: " + this.statusText)
+            } else alert("Ajax error: No data received")
+        } else alert("Ajax error: " + this.statusText)
     }
 }
 
+function ajaxRequest() {
 
-    function ajaxRequest() {
-
-        let request;
+    let request;
+    try {
+        request = new XMLHttpRequest()
+    } catch (e1) {
 
         try {
 
-            request = new XMLHttpRequest()
+            request = new ActiveXObject("Msxml2.XMLHTTP")
 
-        } catch (e1) {
+        } catch (e2) {
 
             try {
 
-                request = new ActiveXObject("Msxml2.XMLHTTP")
+                request = new ActiveXObject("Microsoft.XMLHTTP")
 
-            } catch (e2) {
+            } catch (e3) {
 
-                try {
-
-                    request = new ActiveXObject("Microsoft.XMLHTTP")
-
-                } catch (e3) {
-
-                    request = false
-
-                }
+                request = false
 
             }
 
         }
 
-        return request
-
     }
+
+    return request
+
+}
 
 
 

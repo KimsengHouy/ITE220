@@ -17,7 +17,7 @@ const ROOT_PATH = "/MutexXO";
  *             2 : means session-based authentication
  */
 
-const AUTHENTICATION_MODE = 0;
+const AUTHENTICATION_MODE = 2;
 
 const ADMIN = 'ADMIN';
 const ADMIN_PASS = '999';

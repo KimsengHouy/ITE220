@@ -57,7 +57,5 @@ context.closePath()
  }
 )
 </script>
-
 MYSCRIPT;
-
 }

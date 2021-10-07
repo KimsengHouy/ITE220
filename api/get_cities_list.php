@@ -1,35 +1,21 @@
 <?php
 
-
-
 require_once '../MySQL.php';
-
-
 
 header('Content-type: text/xml');
 
-header ('Cache-Control: no-cache');
+header('Cache-Control: no-cache');
 
-header ('Cache-Control: no-store' , false);
-
-
+header('Cache-Control: no-store', false);
 
 $dom = new DOMDocument();
-
 $dom->encoding = 'utf-8';
-
 $dom->xmlVersion = '1.0';
-
 $dom->formatOutput = true;
-
 $root = $dom->createElement('cities');
-
 $dom->appendChild($root);
-
 $error = $dom->createElement('error');
-
 $root->appendChild($error);
-
 if (isset($_POST['province_name'])) {
     $province_name = SanitizeString($_POST['province_name']);
     $mysql = new MySQL();
@@ -57,15 +43,10 @@ if (isset($_POST['province_name'])) {
     $error->setAttributeNode($err_msg);
 }
 
-
 echo $dom->saveXML();
 
-
-
-
-
-function SanitizeString($var) {
-
+function SanitizeString($var)
+{
 
     $var = strip_tags($var);
 

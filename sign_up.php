@@ -73,6 +73,7 @@ function process_POST()
 
 
     }
+
 }
 
 function emitRegistrationForm()

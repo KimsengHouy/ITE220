@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ee98d09-517d-41f3-b58a-41e6d3038a7f" name="Changes" comment="canvas to instruction page">
+    <list default="true" id="9ee98d09-517d-41f3-b58a-41e6d3038a7f" name="Changes" comment="change css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthenticationProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationProcessor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/XO_setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/XO_setting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/contact_form.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/contact_form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/testing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/get_cities_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/get_cities_list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/get_province_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/get_province_list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact_us.php" beforeDir="false" afterPath="$PROJECT_DIR$/contact_us.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instruction.php" beforeDir="false" afterPath="$PROJECT_DIR$/instruction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/reg_form_handling.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/reg_form_handling.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_game.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_game.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sign_up.php" beforeDir="false" afterPath="$PROJECT_DIR$/sign_up.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial.php" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +141,9 @@
       <workItem from="1633332478397" duration="19477000" />
       <workItem from="1633396230005" duration="6309000" />
       <workItem from="1633422645471" duration="2935000" />
-      <workItem from="1633425634348" duration="3209000" />
+      <workItem from="1633425634348" duration="4816000" />
+      <workItem from="1633535861491" duration="3005000" />
+      <workItem from="1633590754279" duration="4781000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1633099144817</created>
@@ -200,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633426338196</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="change css">
+      <created>1633428963093</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1633428963093</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +243,8 @@
     <MESSAGE value="code to login&#10;testing page canvas" />
     <MESSAGE value="add css to audio&#10;add shop page" />
     <MESSAGE value="canvas to instruction page" />
-    <option name="LAST_COMMIT_MESSAGE" value="canvas to instruction page" />
+    <MESSAGE value="change css" />
+    <option name="LAST_COMMIT_MESSAGE" value="change css" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

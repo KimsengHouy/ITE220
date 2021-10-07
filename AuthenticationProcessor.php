@@ -2,7 +2,7 @@
 require_once "utils.php";
 require_once "XO_setting.php";
 
-extract($_POST,EXTR_PREFIX_ALL,'post_params');
+extract($_POST, EXTR_PREFIX_ALL, 'post_params');
 
 
 if (isset($post_params_username))
@@ -38,7 +38,7 @@ switch (AUTHENTICATION_MODE) {
         break;
 
     case 2:
-        if ($post_params_username == ADMIN && $post_params_password = ADMIN_PASS) {
+        if ($post_params_username && $post_params_password) {
             // user is authenticated
             ini_set('session.gc_maxlifetime', 60 * 60);
             session_start();
@@ -47,10 +47,9 @@ switch (AUTHENTICATION_MODE) {
 
             $_SESSION['username'] = $post_params_username;
             $_SESSION['logged_in'] = true;
-            echo "Hello, " . $post_params_username . "! Welcome back to Our Platform.";
+            echo "Hello, " . $post_params_username . "! Welcome back to Game.";
             echo "<a href= \"index.php\"> Home </a>";
-        }
-        else
+        } else
             echo "Sorry! We could not recognize you!";
         break;
 }

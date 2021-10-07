@@ -1,17 +1,12 @@
 <?php
 
-
-
 require_once '../MySQL.php';
-
-
 
 header('Content-type: text/xml');
 
-header ('Cache-Control: no-cache');
+header('Cache-Control: no-cache');
 
-header ('Cache-Control: no-store' , false);
-
+header('Cache-Control: no-store', false);
 
 
 $dom = new DOMDocument();
@@ -29,7 +24,6 @@ $dom->appendChild($root);
 $error = $dom->createElement('error');
 
 $root->appendChild($error);
-
 
 
 if (isset($_POST['country_id'])) {
@@ -56,9 +50,7 @@ if (isset($_POST['country_id'])) {
 
             }
 
-        }
-
-        else {
+        } else {
 
             $err_msg = new DOMAttr('message', "No country with ID=" . $country_id . " was found.");
 
@@ -74,30 +66,20 @@ if (isset($_POST['country_id'])) {
 
     }
 
-}
-
-else {
+} else {
 
     $err_msg = new DOMAttr('message', "country_id missing.");
 
     $error->setAttributeNode($err_msg);
 
 }
-
-
-
 echo $dom->saveXML();
 
-
-
-
-
-function SanitizeString($var) {
-
+function SanitizeString($var)
+{
     $var = strip_tags($var);
 
     $var = htmlentities($var);
 
     return stripslashes($var);
-
 }
